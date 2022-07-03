@@ -37,8 +37,3 @@ void main() {
 
   print('number = $number, number2 = $number2');
 }
-
-String getValueLog() {
-  print("function invoked!"); // this will NOT be printed if we use "late"
-  return "some value";
-}

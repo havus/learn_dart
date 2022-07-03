@@ -49,6 +49,12 @@ void main() {
 
 
 
+  // ---------------------------------------- symbol ----------------------------------------
+  // Symbol symbol1 = #learning_dart;
+  Symbol symbol1 = Symbol("Learning Dart");
+  print('this is symbol $symbol1');
+
+
   // ---------------------------------------- number ----------------------------------------
   int number = 7;
   // number = 7.5; // will raise error # => `double number2 = 7.5;`
@@ -68,13 +74,21 @@ void main() {
   // ---------------------------------------- dynamic ----------------------------------------
   dynamic upToYou = 'this is string datatype';
   upToYou = 5;
-  upToYou = 1 == 1;
+  // upToYou = 1 == 1;
 
   print('upToYou = $upToYou');
+  print('upToYou is a string? => ${upToYou is String}');
+  print('upToYou is a dynamic? => ${upToYou is dynamic}');
+  print('upToYou data type is ${upToYou.runtimeType}'); // upToYou data type is int
 
 
-  // ---------------------------------------- dynamic ----------------------------------------
-  // string -> int
+  // ------------------------------ data types and conversion ------------------------------
+  dynamic allTypes = 100;
+  // var forceParse = allTypes as String; // -> error
+  print('allTypes data type is ${allTypes.runtimeType}'); // allTypes data type is int
+  var forceParse = allTypes as int;
+  print('forceParse data type is ${forceParse.runtimeType}'); // forceParse data type is int
+
   String inputString      = '10000';
   int inputInt            = int.parse(inputString);
 
@@ -86,6 +100,9 @@ void main() {
   String stringFromBool   = true.toString();
 
   print('inputInt = $stringFromDouble');
+  print('inputString is a string? => ${inputString is String}');
+  print('inputString is NOT a string? => ${inputString is! String}');
+  print('inputString data type is ${inputString.runtimeType}'); // inputString data type is String
 }
 
 String getValueLog() {

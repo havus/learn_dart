@@ -7,6 +7,7 @@ void main() {
 
 
 // ----------------------------- List -----------------------------
+// https://api.dart.dev/stable/2.13.4/dart-core/List-class.html
 void learnList() {
   // List<int> listInt = [1, 2, 3];
   var listInt     = <int>[1, 2, 3]; // same as above

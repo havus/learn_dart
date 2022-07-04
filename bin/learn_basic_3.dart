@@ -2,7 +2,8 @@
 void main() {
   // learnList();
   // learnSet();
-  learnMap();
+  // learnMap();
+  learnDefaultValue();
 }
 
 
@@ -58,4 +59,16 @@ void learnMap() {
   person.remove('address');
 
   print('person = $person');
+}
+
+// ----------------------------- Default Value and Null Safety ------------------------------
+void learnDefaultValue() {
+  String? guest;
+
+  var guestName = guest ?? 'guest';
+
+  print('guestname is $guestName');
+
+  // toLowerCase will not execute if guestName is null
+  print('guestname lowercase is ${guestName?.toLowerCase()}');
 }

@@ -71,6 +71,13 @@ void main() {
   print("wannaLearnMore=${wannaLearnMore}");
 
 
+  // ---------------------------------------- null ----------------------------------------
+  // var willBeBlank; // will NOT error
+  // int willBeBlank; // will NOT error if we dont print it
+  int? willBeBlank; // will NOT error if we dont print it
+  print("willBeBlank = ${willBeBlank}, data type is ${willBeBlank.runtimeType}"); // willBeBlank = null, data type is Null
+
+
   // ---------------------------------------- dynamic ----------------------------------------
   dynamic upToYou = 'this is string datatype';
   upToYou = 5;

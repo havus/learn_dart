@@ -1,7 +1,8 @@
 /// learn about List and Set a.k.a array
 void main() {
   // learnIfCondition();
-  learnSwitchCondition();
+  // learnSwitchCondition();
+  learnTernaryOperator();
 }
 
 void learnIfCondition() {
@@ -35,4 +36,10 @@ void learnSwitchCondition() {
     default:
       print('Case unpredictable!');
   }
+}
+
+void learnTernaryOperator() {
+  var score = 70;
+
+  print(score > 75 ? 'Good job' : 'You must learn harder');
 }

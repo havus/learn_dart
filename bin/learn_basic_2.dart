@@ -1,3 +1,5 @@
+import 'package:learn_dart/learn_dart.dart' as learn_dart;
+
 /// learn about Arithmetic operator
 void main() {
   // ----------------------------------------------------------------------------------
@@ -36,4 +38,7 @@ void main() {
   var number2 = ++number;
 
   print('number = $number, number2 = $number2');
+
+  // from 'lib/learn_dart.dart'
+  print('Hello world: ${learn_dart.calculate()}!');
 }

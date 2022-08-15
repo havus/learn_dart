@@ -1,5 +1,6 @@
 
 abstract class School {
+  int?    id;
   String? name;
 
   // access modifier
@@ -17,7 +18,24 @@ abstract class School {
   }
 }
 
+mixin EqualableSchool on School {
+  bool operator ==(Object other) {
+    if (other is School) {
+      if (this.runtimeType != other.runtimeType) return false;
+
+      if (this.id != other.id)      return false;
+      if (this.name != other.name)  return false;
+
+      return true;
+    }
+
+    return false;
+  }
+}
+
 class KinderGarden extends School {
+  int? id;
+
   KinderGarden(String name) { // can NOT ```KinderGarden(this.name);```
     this.name = name;
   }
@@ -39,9 +57,10 @@ class KinderGarden extends School {
 // class VocationalSchool extends School {
 // }
 
-class University extends School {
+class University extends School with EqualableSchool {
+  int?    id;
   String? title;
-  String _category = "";
+  String  _category = "";
 
   University(String name) {
     this.name = "$name University";
@@ -67,4 +86,4 @@ class University extends School {
   set category(String value) => _category = value;
 }
 
-https://dart-lang.github.io/linter/lints/unnecessary_getters_setters.html
+// https://dart-lang.github.io/linter/lints/unnecessary_getters_setters.html

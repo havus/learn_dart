@@ -19,18 +19,37 @@ abstract class School {
 }
 
 mixin EqualableSchool on School {
-  bool operator ==(Object other) {
-    if (other is School) {
-      if (this.runtimeType != other.runtimeType) return false;
+  // bool operator ==(Object other) {
+  //   if (other is School) {
+  //     if (this.runtimeType != other.runtimeType) return false;
 
-      if (this.id != other.id)      return false;
-      if (this.name != other.name)  return false;
+  //     if (this.id != other.id)      return false;
+  //     if (this.name != other.name)  return false;
 
-      return true;
-    }
+  //     return true;
+  //   }
 
-    return false;
-  }
+  //   return false;
+  // }
+
+  // int get hashCode {
+  //   var result = runtimeType.hashCode;
+  //   result += id.hashCode;
+  //   result += name.hashCode;
+
+  //   return result;
+  // }
+
+  @override
+  bool operator ==(Object other) =>
+    identical(this, other) ||
+    other is School &&
+      runtimeType == other.runtimeType &&
+      id == other.id &&
+      name == other.name;
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ id.hashCode ^ name.hashCode;
 }
 
 class KinderGarden extends School {
